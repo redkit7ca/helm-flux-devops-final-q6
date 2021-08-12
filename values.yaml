@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 spec:
   type: NodePort
 tag: final-pod
