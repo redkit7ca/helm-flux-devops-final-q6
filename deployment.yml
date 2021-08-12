@@ -2,17 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: final-deployment
+  # labels:
+  #   app: final-pod
 spec:
-  replicas: {{ .Values.replicaCount}}
+  replicas: 3
   selector:
     matchLabels:
-      tag: {{ .Values.tag}}
+      # app: final-pod
+      tag: final-pod
   template:
     metadata:
       labels:
-        tag: {{ .Values.tag}}
+        # app: final-pod
+        tag: final-pod
     spec:
       containers:
       - name: final-container
         image: final:v1
-
+        # ports:
+        # - containerPort: 80
